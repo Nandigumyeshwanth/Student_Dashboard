@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <header class="top-header">
+            <h1 class="header-title">Welcome To Your Dashboard</h1>
+            <div class="header-meta">
+                <span id="current-date"></span>
+                <i class="fas fa-search"></i>
+                <button id="logout-button" class="log-out-btn">Log out</button>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            
+            <div class="main-column">
+
+                <section class="card hero-banner">
+                    <div class="hero-text">
+                        <h2>Good Morning</h2>
+                        <p>You've learned **<span id="progress-goal">70%</span>** of your goal this week! Keep it up and improve your results!</p>
+                    </div>
+                    <div class="hero-image"></div>
+                </section>
+
+                <section class="card progress-card">
+                    <div class="card-header">
+                        <h3>Latest Progress</h3>
+                        <a href="#">More...</a>
+                    </div>
+                    <div id="progress-list" class="progress-list">
+                        <p>Loading course progress...</p>
+                    </div>
+                </section>
+
+                <section class="card time-card">
+                    <div class="card-header">
+                        <h3>Time spent on Studying</h3>
+                        <a href="#">More...</a>
+                    </div>
+                    <div class="study-chart">
+                        <div class="chart-labels">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thurs</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-col" style="height: 70%;"><div class="bar-inner" style="height: 60%; background-color: #007bff;"></div></div>
+                            <div class="bar-col" style="height: 85%;"><div class="bar-inner" style="height: 75%; background-color: #007bff;"></div></div>
+                            <div class="bar-col" style="height: 65%;"><div class="bar-inner" style="height: 55%; background-color: #007bff;"></div></div>
+                            <div class="bar-col" style="height: 90%;"><div class="bar-inner" style="height: 80%; background-color: #007bff;"></div></div>
+                            <div class="bar-col" style="height: 80%;"><div class="bar-inner" style="height: 70%; background-color: #007bff;"></div></div>
+                            <div class="bar-col" style="height: 40%;"><div class="bar-inner" style="height: 30%; background-color: #007bff;"></div></div>
+                            <div class="bar-col" style="height: 55%;"><div class="bar-inner" style="height: 45%; background-color: #007bff;"></div></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="your-courses">
+                    <div class="card-header">
+                        <h3>Your Courses</h3>
+                        <a href="#">More...</a>
+                    </div>
+                    <div id="course-cards-list" class="course-card-grid">
+                        <div class="course-mini-card" style="background-color: #28a745;">
+                            <span class="level">B3</span>
+                            <span class="title">HTML <br> Anchor tags</span>
+                        </div>
+                        <div class="course-mini-card" style="background-color: #007bff;">
+                            <span class="level">A1</span>
+                            <span class="title">CSS <br> Selectors</span>
+                        </div>
+                        <div class="course-mini-card" style="background-color: #dc3545;">
+                            <span class="level">B6</span>
+                            <span class="title">React <br> Hooks</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="sidebar-column">
+                
+                <section class="card profile-sidebar">
+                    
+                    <label for="profile-photo-upload" class="profile-photo-container">
+                        <img id="profile-avatar-large" src="https://via.placeholder.com/100/000000/FFFFFF?text=A" alt="Profile Picture" class="profile-avatar-large">
+                        <div class="edit-icon"><i class="fas fa-camera"></i></div>
+                    </label>
+                    
+                    <input type="file" id="profile-photo-upload" accept="image/*" style="display: none;">
+
+                    <h4 class="profile-name">yeshwanth</h4>
+                    <p class="profile-role">Student</p>
+
+                    <div class="language-progress">
+                        <div class="lang-item">
+                            <span class="level-tag" style="border-color: #dc3545; color: #dc3545;">A2</span>
+                            <div class="lang-info">
+                                <strong>English</strong>
+                                <small>Intermediate</small>
+                            </div>
+                        </div>
+                        <div class="lang-item">
+                            <span class="level-tag" style="border-color: #007bff; color: #007bff;">B3</span>
+                            <div class="lang-info">
+                                <strong>Yoruba</strong>
+                                <small>Advance</small>
+                            </div>
+                            <div class="lang-bar-placeholder"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card reminders-card">
+                    <h3>Reminders</h3>
+                    <div id="tasks-list" class="reminders-list">
+                        <p>Loading reminders...</p>
+                    </div>
+                    <div class="see-more-link">
+                        <a href="#">See More... <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', initializeDashboard);
+        document.getElementById('logout-button').addEventListener('click', handleLogout);
+    </script>
+</body>
+</html>
